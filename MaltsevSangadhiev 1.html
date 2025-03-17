@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки товаров</title>
+    <style>
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 225px);
+            width: 100%;
+            max-width: 1000px;
+            justify-content: center;
+            justify-items: center;
+            column-gap: 30px;
+            row-gap: 40px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            width: 225px;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card .price {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .card .discount {
+            font-size: 14px;
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        .card .sale {
+            font-size: 14px;
+            color: #e74c3c;
+        }
+
+        .card button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .card button:hover {
+            background-color: #2980b9;
+        }
+
+        .card input[type="file"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="card">
+            <img id="preview1" src="c:\Users\Student.3-306-16\Downloads\14-pro-gold-1.jpg.webp" alt="Загрузите изображение">
+            <input type="file" id="upload1" onchange="previewImage(event, 'preview1')">
+            <h3>Смартфон Apple iPhone 14 Pro Max 256Gb, золотой</h3>
+            <div class="price">135 000 ₽</div>
+            <div class="discount">150 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+
+        <div class="card">
+            <img id="preview2" src="c:\Users\Student.3-306-16\Downloads\smartfon_samsung_galaxy_s22_ultra_12_256gb_chernyy_fantom_s908e.jpeg" alt="Загрузите изображение">
+            <input type="file" id="upload2" onchange="previewImage(event, 'preview2')">
+            <h3>Смартфон Samsung Galaxy S22 Ultra 256Gb, черный фантом</h3>
+            <div class="price">90 000 ₽</div>
+            <div class="discount">100 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+
+        <div class="card">
+            <img id="preview3" src="c:\Users\Student.3-306-16\Downloads\2004606066_46778678 (1).jpg" alt="Загрузите изображение">
+            <input type="file" id="upload3" onchange="previewImage(event, 'preview3')">
+            <h3>Смартфон Xiaomi 12X 256Gb, фиолетовый</h3>
+            <div class="price">72 000 ₽</div>
+            <div class="discount">80 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+
+        <div class="card">
+            <img id="preview4" src="c:\Users\Student.3-306-16\Downloads\Без названия (10).jfif" alt="Загрузите изображение">
+            <input type="file" id="upload4" onchange="previewImage(event, 'preview4')">
+            <h3>Смартфон Xiaomi Poco F4 GT 128Gb, желтый</h3>
+            <div class="price">54 000 ₽</div>
+            <div class="discount">60 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+
+        <div class="card">
+            <img id="preview5" src="c:\Users\Student.3-306-16\Downloads\apple-macbook-pro-13-m2-seryj-kosmos.jpg" alt="Загрузите изображение">
+            <input type="file" id="upload5" onchange="previewImage(event, 'preview5')">
+            <h3>Ноутбук Apple MacBook Pro 10, 512TE SSD, серый космос</h3>
+            <div class="price">270 000 ₽</div>
+            <div class="discount">300 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+        <div class="card">
+            <img id="preview6" src="c:\Users\Student.3-306-16\Downloads\images (1).jfif" alt="Загрузите изображение">
+            <input type="file" id="upload6" onchange="previewImage(event, 'preview6')">
+            <h3>Ноутбук MSI Sword 15, 512TE SSD, белый</h3>
+            <div class="price">90 000 ₽</div>
+            <div class="discount">100 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+
+        <div class="card">
+            <img id="preview7" src="c:\Users\Student.3-306-16\Downloads\27003157-de8f-4205-8476-0a887ef2f089.webp" alt="Загрузите изображение">
+            <input type="file" id="upload7" onchange="previewImage(event, 'preview7')">
+            <h3>Ультрабук Acer Swift 3, 512TE SSD, серый</h3>
+            <div class="price">72 000 ₽</div>
+            <div class="discount">80 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+
+        <div class="card">
+            <img id="preview8" src="c:\Users\Student.3-306-16\Downloads\a7709142-7019-406d-833f-15103b45f65e.webp" alt="Загрузите изображение">
+            <input type="file" id="upload8" onchange="previewImage(event, 'preview8')">
+            <h3>Lenovo IdeaPad 3, 256TE SSD, серый</h3>
+            <div class="price">45 000 ₽</div>
+            <div class="discount">50 000 ₽</div>
+            <div class="sale">Скидка 10%</div>
+            <button>В корзину</button>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event, previewId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewId).src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
